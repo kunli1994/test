@@ -1,5 +1,5 @@
 #! /usr/bin/env python3 
-
+import os
 from flask import Flask, request
 app = Flask(__name__)
 
@@ -11,5 +11,5 @@ def hello():
         return "Hello World!\n"
 
 if __name__ == "__main__":
-    app.run()
+    app.run(port=os.environ.get("PORT", "5000"))
 
